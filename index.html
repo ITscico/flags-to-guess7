@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flags to guess7</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="screen-menu" class="screen active">
+      <div class="hero-card">
+        <p class="eyebrow">Mini Game</p>
+        <h1>flags to guess7</h1>
+        <p id="menu-subtitle" class="subtitle">Indovina 5 bandiere. Hai 7 tentativi per ogni round.</p>
+        <div class="button-row">
+          <button id="start-btn" class="btn primary">Inizia gioco</button>
+          <button id="settings-btn" class="btn secondary">Impostazioni</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-settings" class="screen">
+      <div class="panel">
+        <h2 id="settings-title">Impostazioni</h2>
+        <label id="language-label" for="language-select">Lingua</label>
+        <select id="language-select">
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+        </select>
+        <button id="back-menu-btn" class="btn secondary wide">Torna al menu</button>
+      </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="topbar">
+        <div><span id="round-label">Round</span> <strong id="round-number">1/5</strong></div>
+        <div><span id="tries-label">Tentativi usati</span> <strong id="tries-number">1/7</strong></div>
+        <div><span id="score-label">Punteggio</span> <strong id="score-number">0</strong></div>
+      </div>
+
+      <div class="game-card">
+        <div class="flag-frame">
+          <canvas id="flag-canvas" width="700" height="420" aria-label="Flag image"></canvas>
+          <div id="loading-flag" class="loading">Caricamento...</div>
+        </div>
+
+        <div class="answer-area">
+          <input id="answer-input" type="text" autocomplete="off" placeholder="Scrivi il nome dello Stato" />
+          <button id="submit-btn" class="btn primary">Conferma</button>
+        </div>
+        <p id="feedback" class="feedback"></p>
+      </div>
+    </section>
+
+    <section id="screen-pause" class="screen pause-screen">
+      <div class="pause-box">
+        <p id="round-result" class="round-result"></p>
+        <h2 id="pause-title">Continua al prossimo round: Round 2</h2>
+        <button id="next-round-btn" class="btn primary">Prosegui</button>
+      </div>
+    </section>
+
+    <section id="screen-final" class="screen final-screen">
+      <div class="decor-flags" aria-hidden="true"></div>
+      <div class="final-card">
+        <h2 id="final-title">Partita finita!</h2>
+        <p id="final-message">Bel lavoro.</p>
+        <div class="final-score"><span id="final-score-label">Punteggio totale</span>: <strong id="final-score">0</strong></div>
+        <button id="restart-btn" class="btn primary wide">Ritorna all'inizio</button>
+      </div>
+    </section>
+    <div class="production-mark" aria-hidden="true">albee.meree production</div>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
